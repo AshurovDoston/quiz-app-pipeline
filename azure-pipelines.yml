@@ -18,10 +18,10 @@ steps:
   displayName: 'npm install'
 
 
-- task: PowerShell@2
+- task: NodeTool@0
   inputs:
-    targetType: 'inline'
-    script: 'npm run build.azure'
+    versionSpec: '12.x'
+  displayName: 'npm run build.azure'
 
 - task: CopyFiles@2
   inputs:
