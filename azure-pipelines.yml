@@ -24,11 +24,11 @@ steps:
   displayName: 'npm run build.azure'
 
 - task: CopyFiles@2
-  displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
+  displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)/build'
   inputs:
-    SourceFolder: '$(System.DefaultWorkingDirectory)/build'
-    Contents: '**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    SourceFolder: '$(System.DefaultWorkingDirectory)'
+    # Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/build'
 
 - task: PublishBuildArtifacts@1
   inputs:
